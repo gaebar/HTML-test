@@ -3,18 +3,35 @@
 <head>
     <title>Gaetano Barreca</title>
     <style>
+        html,
+        body {
+            height: 100%;
+        }
+
         body {
             text-align: center;
             background: url("https://previews.123rf.com/images/kamonsaejueng/kamonsaejueng1803/kamonsaejueng180300039/97348548-styled-stock-photography-white-office-desk-table-with-blank-notebook-computer-supplies-and-coffee-cu.jpg");
             background-size: cover;
-            background-position: center;
+            background-position: 80%;
             color: darkblue;
             font-family: arial;
             padding-top: 20px;
+            background-repeat: no-repeat;
+            margin: 0px;
+            padding: 0px;
         }
 
+        body>div {
+            display: block;
+            height: 100%;
+            width: 334px;
+            margin: 0 auto;
+        }
+
+        .salutation {}
+
         .profile-image {
-            margin-top: 10px;
+            margin-top: 40px;
             display: inline-block;
             width: 200px;
             height: 200px;
@@ -23,6 +40,7 @@
             border-radius: 40px;
             background-position: -14px -9px;
             border: 3px solid darkblue;
+            margin-bottom: 12px;
         }
 
         img {
@@ -50,9 +68,11 @@
 <body>
     <div class="container">
         <div class="profile-image"></div>
-        <h1>Hey, I am Gaetano!</h1>
-        <p>Your next full stack developer</p>
-        <p>Fill in the form to get in touch!</p>
+        <div class="salutation">
+            <h1>Hey, I am Gaetano!</h1>
+            <p>Your next full stack developer</p>
+            <p>Fill in the form to get in touch!</p>
+        </div>
         <input type="email" placeholder="Your email">
         <input type="submit">
     </div>
