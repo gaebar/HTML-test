@@ -1,8 +1,24 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <!-- I've worked on this project on Visual Studio text editor and then paste the code in Dash. 
+        I found the experience more challenging and I did my best to add extra touch like the GA favicon on the web browser tab -->
     <title>Gaetano Barreca</title>
+    <link rel="shortcut icon"
+        href="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/favicon_1gyC3.ico">
+
+    <!--below a special font from the Google Fonts website-->
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
+    <!--
+    - come si salva l'immagine nella cartella per poi essere riutilizata? 
+    Basta l'immagine o devo metter una cartella chiamata immagine se piu di una?ù     
+    - forse è meglio che uso solo link in questo stage in quanto devo dare il link di di Dash 
+    e dunque non si può accedere alla cartella di Github.    
+    -->
     <style>
+        /*Perche ci sono due body? e' un errore?*/
         html,
         body {
             height: 100%;
@@ -14,7 +30,7 @@
             background-size: cover;
             background-position: 80%;
             color: darkblue;
-            font-family: arial;
+            font-family: 'Dosis', sans-serif;
             padding-top: 20px;
             background-repeat: no-repeat;
             margin: 0px;
@@ -22,15 +38,16 @@
         }
 
         body>div {
+            /* spiegami ancora questo del figlio*/
             display: block;
             height: 100%;
             width: 334px;
             margin: 0 auto;
         }
 
-        .salutation {}
-
         .profile-image {
+            /* possiamo eliminare questo background immagine? non lo capisco
+            Anche, perchè vorrei inserire il termine alt e qui stranamente non me lo fa fare*/
             margin-top: 40px;
             display: inline-block;
             width: 200px;
@@ -59,21 +76,39 @@
         }
 
         input[type="submit"] {
-            background: blue;
-            color: white;
+            background: yellow;
+            color: darkblue;
         }
     </style>
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="profile-image"></div>
-        <div class="salutation">
-            <h1>Hey, I am Gaetano!</h1>
-            <p>Your next full stack developer</p>
-            <p>Fill in the form to get in touch!</p>
+    <div>
+        <div class="profile-image">
+         <img src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/16142963_10211746945730811_7184234491543294853_n.jpg?_nc_cat=108&_nc_ht=scontent-mxp1-1.xx&oh=521dd6822ce4f837c919b73eb0a53e44&oe=5D07D0BA"
+            alt="Gaetano Barreca profile image">
         </div>
-        <input type="email" placeholder="Your email">
-        <input type="submit">
+        <h1>Hey, I am Gaetano!</h1>
+        <p>Your next full stack developer</p>
+        <p><b>Fill in the form to get in touch!</b></p>
+        <!--On here, I've sperimented the botton submit to open the form submission open in a new tab/window. Also, I've added the email's subject, Cc and the body-->
+        <input id="input-salutation" type="text" placeholder="Say hi!">
+        <a id="submit-link"
+            href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=Let's meet!&body="
+            target="_blank"><input type="submit"></a>
     </div>
+    <script>
+        function sendemail(e) {
+            var inputSalutation = document.getElementById("input-salutation").value;
+            var hrefContent = document.getElementById("submit-link").href;
+            var location = hrefContent + inputSalutation;
+            window.location.href = location;
+            e.preventDefault();
+        }
+
+        document.getElementById("submit-link").addEventListener("click", sendemail);
+    </script>
 </body>
+
+</html>
