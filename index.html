@@ -18,7 +18,6 @@
     e dunque non si può accedere alla cartella di Github.    
     -->
     <style>
-        /*Perche ci sono due body? e' un errore?*/
         html,
         body {
             height: 100%;
@@ -46,16 +45,10 @@
         }
 
         .profile-image {
-            /* possiamo eliminare questo background immagine? non lo capisco
-            Anche, perchè vorrei inserire il termine alt e qui stranamente non me lo fa fare*/
             margin-top: 40px;
-            display: inline-block;
             width: 200px;
             height: 200px;
-            background-image: url(https://bit.ly/2ux19F1);
-            background-size: 107%;
             border-radius: 40px;
-            background-position: -14px -9px;
             border: 3px solid darkblue;
             margin-bottom: 12px;
         }
@@ -67,12 +60,14 @@
 
         p {
             font-size: 22px;
+            margin: 10px;
         }
 
         input {
             border: 0;
             padding: 10px;
             font-size: 18px;
+            margin-top: 21px;
         }
 
         input[type="submit"] {
@@ -85,17 +80,15 @@
 
 <body>
     <div>
-        <div class="profile-image">
-         <img src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/16142963_10211746945730811_7184234491543294853_n.jpg?_nc_cat=108&_nc_ht=scontent-mxp1-1.xx&oh=521dd6822ce4f837c919b73eb0a53e44&oe=5D07D0BA"
+        <img class="profile-image"
+            src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/16142963_10211746945730811_7184234491543294853_n.jpg?_nc_cat=108&_nc_ht=scontent-mxp1-1.xx&oh=521dd6822ce4f837c919b73eb0a53e44&oe=5D07D0BA"
             alt="Gaetano Barreca profile image">
-        </div>
         <h1>Hey, I am Gaetano!</h1>
         <p>Your next full stack developer</p>
-        <p><b>Fill in the form to get in touch!</b></p>
+        <p>Fill in the form to get in touch!</p>
         <!--On here, I've sperimented the botton submit to open the form submission open in a new tab/window. Also, I've added the email's subject, Cc and the body-->
         <input id="input-salutation" type="text" placeholder="Say hi!">
-        <a id="submit-link"
-            href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=Let's meet!&body="
+        <a id="submit-link" href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=Let's meet!&body="
             target="_blank"><input type="submit"></a>
     </div>
     <script>
