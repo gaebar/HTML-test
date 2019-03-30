@@ -7,8 +7,7 @@
         by adding a custom image, a button for sending an email and 
         a classic arcade game favicon on the web browser tab -->
     <title>Gaetano Barreca</title>
-    <link rel="shortcut icon"
-        href="https://raw.githubusercontent.com/gaebar/HTML-test/master/img/favicon.ico">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/gaebar/HTML-test/master/img/favicon.ico">
 
     <!--below a special font from the Google Fonts website-->
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
@@ -49,12 +48,19 @@
             border: 3px solid darkblue;
             margin-bottom: 12px;
         }
+
         .footer-love {
             font-size: 18px;
         }
+
         img {
             width: 150px;
             border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
         }
 
         p {
@@ -74,21 +80,26 @@
             color: darkblue;
         }
 
-        hr {
-            border: 0;
-            border-bottom: 2px solid;
-            margin-top 33px;
-            margin bottom:20px; 
-        }
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 0px;
+            position: absolute;
+            bottom: 0px;
+            width: 334px;
+            padding-bottom: 10px;
+            border-top: 1px solid darkblue;
+            padding-top: 10px;
         }
+
         a {
             text-decoration: none;
             font-weight: bold;
             color: #F15B31;
 
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 
@@ -102,29 +113,34 @@
         <h1>Hey, I am Gaetano!</h1>
         <p>Your next full stack developer</p>
         <p>Fill in the form to get in touch!</p>
-        <!--On here, I've sperimented the botton submit to open the form submission open in a new tab/window. Also, I've added the email's subject, Cc and the body-->
-        <input id="input-salutation" type="text" placeholder="Say hi!">
-        <a id="submit-link" href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=🍄 Let's meet!&body="
-            target="_blank"><input type="submit"></a>
+
+        <!--I've sperimented the botton submit to open the form submission open in 
+            a new tab/window. Also, I've added the email's subject, Cc and the body-->
+        <form id="form-salutation" action="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=🍄 Let's meet!&body="
+            method="post" enctype="text/plain">
+            <input id="input-salutation" type="text" placeholder="Say hi!">
+            <input type="submit" value="Submit" />
+        </form>
+
+        <!--Footer with the soial media link-->
+        <footer>
+            <a href="https://www.linkedin.com/in/gaetanobarreca/" target="_blank">Linkedin</a> |
+            <a href="https://github.com/gaebar">Github</a> |
+            <a href="https://www.instagram.com/di_ruderi_e_di_scrittura/" target="_blank">Instagram</a>
+            <p class="footer-love">Made with &hearts;</p>
+        </footer>
     </div>
     <script>
+        // populate mail to link with imput box contect 
         function sendemail(e) {
             var inputSalutation = document.getElementById("input-salutation").value;
-            var hrefContent = document.getElementById("submit-link").href;
+            var hrefContent = document.getElementById("form-salutation").action;
             var location = hrefContent + inputSalutation;
-            window.open(location,'_blank');
+            window.open(location, '_blank');
             e.preventDefault();
         }
-        document.getElementById("submit-link").addEventListener("click", sendemail);
+        document.getElementById("form-salutation").addEventListener("submit", sendemail);
     </script>
-    <hr>
-    <!--Here the footer with the soial media link-->
-    <div>
-        <a href="https://www.linkedin.com/in/gaetanobarreca/" target="_blank">Linkedin</a> |
-        <a href="https://github.com/gaebar">Github</a> |
-        <a href="https://www.instagram.com/di_ruderi_e_di_scrittura/" target="_blank">Instagram</a>
-        <p class= "footer-love">Made with &hearts;</p>
-    </div>
 </body>
 
 </html>
