@@ -49,7 +49,9 @@
             border: 3px solid darkblue;
             margin-bottom: 12px;
         }
-
+        .footer-love {
+            font-size: 18px;
+        }
         img {
             width: 150px;
             border-radius: 50%;
@@ -71,6 +73,23 @@
             background: yellow;
             color: darkblue;
         }
+
+        hr {
+            border: 0;
+            border-bottom: 2px solid;
+            margin-top 33px;
+            margin bottom:20px; 
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #F15B31;
+
+        }
     </style>
 
 </head>
@@ -85,7 +104,7 @@
         <p>Fill in the form to get in touch!</p>
         <!--On here, I've sperimented the botton submit to open the form submission open in a new tab/window. Also, I've added the email's subject, Cc and the body-->
         <input id="input-salutation" type="text" placeholder="Say hi!">
-        <a id="submit-link" href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=Let's meet!&body="
+        <a id="submit-link" href="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=🍄 Let's meet!&body="
             target="_blank"><input type="submit"></a>
     </div>
     <script>
@@ -93,11 +112,17 @@
             var inputSalutation = document.getElementById("input-salutation").value;
             var hrefContent = document.getElementById("submit-link").href;
             var location = hrefContent + inputSalutation;
-            window.location.href = location;
+            window.open(location,'_blank');
             e.preventDefault();
         }
         document.getElementById("submit-link").addEventListener("click", sendemail);
     </script>
+    <hr>
+    <div>
+        <a href="https://www.linkedin.com/in/gaetanobarreca/" target="_blank">Linkedin</a> |
+        <a href="https://www.instagram.com/di_ruderi_e_di_scrittura/" target="_blank">Instagram</a>
+        <p class= "footer-love">Made with &hearts;</p>
+    </div>
 </body>
 
 </html>
