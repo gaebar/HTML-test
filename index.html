@@ -4,15 +4,15 @@
 <head>
     <!-- I've developed this page using Visual Studio Code and then
         have pasted the code in Dash. I did my best to add my own touch,
-        by adding a custom image, testing a button for sending an email and 
+        by adding a custom image, a button for sending an email and 
         a classic arcade game favicon on the web browser tab -->
     <title>Gaetano Barreca</title>
-    
+
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/gaebar/HTML-test/master/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset=utf-8>
 
-    <!--below a special font from the Google Fonts website-->
+    <!-- Using a Google Fonts family -->
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
     <style>
@@ -34,8 +34,7 @@
             padding: 0px;
         }
 
-        body>div {
-            /* spiegami ancora questo del figlio*/
+        .container {
             display: block;
             height: 100%;
             width: 334px;
@@ -44,7 +43,7 @@
         }
 
         .profile-image {
-            margin-top: 40px;
+            margin-top: 50%;
             width: 200px;
             height: 200px;
             border-radius: 40px;
@@ -52,9 +51,9 @@
             margin-bottom: 12px;
         }
 
-        @media only screen and (min-height: 800px) {
+        @media only screen and (max-height: 800px) {
             .profile-image {
-                margin-top: 50%;
+                margin-top: 40px;
             }
         }
 
@@ -89,6 +88,11 @@
         input[type="submit"] {
             background: yellow;
             color: darkblue;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #fff900;
         }
 
         footer {
@@ -113,11 +117,12 @@
         a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <img class="profile-image"
             src="https://raw.githubusercontent.com/gaebar/HTML-test/master/img/profile-picture.jpg"
             alt="Gaetano Barreca profile image">
@@ -125,8 +130,8 @@
         <p>Your next full stack developer</p>
         <p>Fill in the form to get in touch!</p>
 
-        <!--I've sperimented the button submit to the form submission open in 
-            a new tab/window. Also, I've added the email's subject, Cc and the body-->
+        <!-- I've experimented with adding a submit button which opens the email composing screen in 
+            a new tab/window. Also, I've added the email's subject, CC and body -->
         <form id="form-salutation"
             action="mailto:gaetanobarreca@gmail.com?cc=info@gaetanobarreca.com&subject=🍄 Let's meet!&body="
             method="post" enctype="text/plain">
@@ -134,7 +139,7 @@
             <input type="submit" value="Submit" />
         </form>
 
-        <!--Footer with the social media link-->
+        <!-- Footer with social media links -->
         <footer>
             <a href="https://www.linkedin.com/in/gaetanobarreca/" target="_blank">Linkedin</a> |
             <a href="https://github.com/gaebar">Github</a> |
@@ -143,10 +148,10 @@
         </footer>
     </div>
     <script>
-        // populate mail to link with imput box contect 
+        // Populates the mailto link with content from the input text field 
         function sendemail(e) {
-            var inputSalutation = document.getElementById("input-salutation").value;
             var hrefContent = document.getElementById("form-salutation").action;
+            var inputSalutation = document.getElementById("input-salutation").value;
             var location = hrefContent + inputSalutation;
             window.open(location, '_blank');
             e.preventDefault();
