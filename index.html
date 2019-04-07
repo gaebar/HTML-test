@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- See the most updated version on GitHub at https://github.com/gaebar/HTML-test -->
+<!-- See the most updated version on GitHub at https://github.com/gaebar/HTML-test -->
+
 <head>
     <!-- I've developed this page using Visual Studio Code and then
         have pasted the code in Dash. I did my best to add my own touch,
@@ -51,10 +52,8 @@
             margin-bottom: 12px;
         }
 
-        @media only screen and (max-height: 800px) {
-            .profile-image {
-                margin-top: 40px;
-            }
+        form#form-salutation {
+            padding-bottom: 30px;
         }
 
         .footer-love {
@@ -65,8 +64,6 @@
             width: 150px;
             border-radius: 50%;
         }
-
-
 
         h1 {
             font-size: 32px;
@@ -118,6 +115,22 @@
             text-decoration: underline;
         }
 
+        @media only screen and (max-height: 600px) {
+            html,
+            body {
+                height: inherit;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+
+        @media only screen and (max-height: 800px) {
+            .profile-image {
+                margin-top: 40px;
+            }
+        }
     </style>
 </head>
 
